@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <title> unidad 01| Actividad No. 01 </title>
+   <meta charset="utf-8">
+   <meta name="Autor" content="Mauricio Eduardo Castillo Perez">
+   <meta name="Fecha" content="13/02/2025">
+   <meta name="Resumen" content="Listas">
+   <link rel="icon"type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<h1unidad 01| Actividad No. 04-1:: Tema(Listas)></H1>
+<h3>Siglas</h3>
+<dl>
+    <dt>LAN</dt><dd>Local Area Network (red de área local)</dd>
+    <dt>OSI</dt></dt><dd>(Open Systems Interconnection)</dd>
+    <dt>IP</dt><dd>(Internet Protocol):</dd>
+    <dt>TCP</dt><dd>(Transmission Control Protocol)</dd>
+    <dt>UDP</dt><dd>(User Datagram Protocol)</dd>
+    <dt>SSH</dt><dd>(Secure Shell):</dd>
+    <dt>FTP</dt><dd>(File Transfer Protocol):</dd>
+    <dt>SMTP</dt><dd>(Simple Mail Transfer Protocol)</dd>
+    <dt>POP</dt><dd>(Post Office Protocol)</dd>
+    <dt>DHCP</dt><dd>(Dynamic Host Configuration Protocol):</dd>
+    <dt>DNS</dt><dd>(Domain Name System)</dd>
+    <dt>HTTP</dt><dd>(Hypertext Transfer Protocol)</dd>
+    
+</dl>
+</body>
+</html>
