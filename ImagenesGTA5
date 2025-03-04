@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+  <head>
+    <title>Unidad 8 | Actividad GTA V</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <meta charset="utf-8">
+    <meta name="Autor" content="Mauricio Eduardo Castillo Perez">
+    <meta name="Fecha" content="???">
+    <meta name="Resumen" content="Imágenes de GTA V">
+  </head>
+  <body>
+    <h1>Unidad 1 | Actividad 08 :: Tema (Imágenes GTA V)</h1>
+    <h3>Imágenes</h3>
+    <details name="imagen">
+      <summary>Imagen en tamaño original</summary>
+      <img src="gta5-original.png" alt="Logo GTA V" />
+      <summary>Imagen en tamaño 150 píxeles</summary>
+      <img src="gta5-150px.png" alt="Logo GTA V" height="150px" />
+      <summary>Banner en tamaño original</summary>
+      <img src="gta5-banner-original.png" alt="Banner GTA V" />
+      <summary>Banner en tamaño 150 píxeles de alto</summary>
+      <img src="gta5-banner-150px.png" alt="Banner GTA V" height="150px" />
+      <summary>Banner en tamaño 300 píxeles de alto</summary>
+      <img src="gta5-banner-300px.png" alt="Banner GTA V" height="300px" />
+    </details>
+  </body>
+</html>
