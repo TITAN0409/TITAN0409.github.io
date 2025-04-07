@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es"
+<head>
+<title> Unidad 2 | Actividad 01 </title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="utf-8">
+<meta name="Autor" content="Mauricio Eduardo Castillo Perez">
+<meta name="Fecha" content="26 de febrero de 2025"> 
+<meta name="Descripción" content="Tablas">
+</head>
+<body>
+<h1> Unidad 2 Actividad 01 :: Tema (Tablas) </h1>
+<h3> Cuadro mágico </h3> Tabla sin formato
+<table>
+<tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> <td> 4 </td> </tr> +-
+<tr> <td>13</td> <td>14</td> <td>15</td> <td>&nbsp;</td></tr> +-
+</table> +-
+<h3> Cuadro mágico </h3> Tabla con bordes
+<table border="5">
+<tr> <td>1</td> <td> 2 </td> <td> 3 </td> <td> 4 </td> </tr> + -
+<tr> <td> 13 </td> <td> 14 </td> <td> 15 </td> <td> &nbsp; </td> </tr> +-
+</table> +-
+<h3> Cuadro mágico </h3> Tabla con bordes y alineación
+<table border="5">
+<tr align="center"> <td> 1 </td> <td>2</td> <td> 3</td>  <td> 4 </td> </tr> +-
+<tr align="center"> <td> 13 </td> <td> 14 </td> <td>15</td> <td> &nbsp; </td></tr> +-
+</table>
+<h3> Cuadro mágico </h3> Tabla con bordes, alineación y encabezados
+<table border="5">
+<tr align="center"> <th> &nbsp; </th> <th> A </th> <th>B</th> <th>C </th> <th>D </th></tr>+-
+<tr align="center"> <th> 1 </th> <td>1</td> <td> 2 </td> <td> 3 </td> <td> 4 </td> </tr>+-
+<tr align="center"> <th> 4 </th> <td> 13 </td> <td> 14 </td> <td>15</td> <td> &nbsp; </td></tr>+-
+</table>
+</body>
+</html>
