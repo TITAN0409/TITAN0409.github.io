@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GTA Online - Información</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      .montserrat { font-family: 'Montserrat', sans-serif; }
+      margin: 0;
+      padding: 0;
+      background: url('https://images.ctfassets.net/wn7ipiv9ue5v/6RaDA46YabcjuI6kwensnJ/c818e799ea693b9ac97e41c95b4a2d81/gta-online-the-chop-shop-header.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .header {
+      background-color: #0073e6;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background-color: #ffcc00;
+    }
+
+    .search-bar input {
+      width: 60%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    nav {
+      background-color: #0073e6;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    nav ul li:hover {
+      transform: scale(1.3);
+      z-index: 999;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    nav ul li:hover > a {
+      background-color: #005bb5;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #0073e6;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul li ul li ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #0073e6;
+      min-width: 200px;
+    }
+
+    nav ul li ul li:hover > ul {
+      display: block;
+    }
+
+    .content {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.85);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .character-section, .location-section, .update-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Ajustes para pantallas más pequeñas */
+    @media (max-width: 768px) {
+      iframe {
+        max-width: 100%;
+        height: auto;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>GTA Franquicia</h1>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar...">
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="Contraportada.html">Portada</a></li>
+      <li>
+        <a href="#history">Historia</a>
+        <ul>
+          <li><a href="sanandreas">GTA: San Andreas</a></li>
+          <li><a href="vicecity">GTA: Vice City</a></li>
+          <li><a href="GTAIII.html">GTA III</a></li>
+	        <li><a href="liberty.html">GTA: Liberty City Stories</a></li>
+          <li><a href="#">GTA IV</a></li>
+          <li><a href="gta5.html">GTA V</a></li>
+          <li><a href="gtaonline.html">GTA Online</a></li>
+          <li><a href="#">GTA VI</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#secret">Secretos</a>
+        <ul>
+          <li><a href="#">Trucos y Easter Eggs</a></li>
+          <li><a href="#">Misterios de GTA</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#characters">Personajes</a>
+        <ul>
+          <li><a href="#">GTA: San Andreas</a></li>
+          <li><a href="#">GTA: Vice City</a></li>
+          <li><a href="#">GTA: IV</a></li>
+          <li><a href="#">GTA III</a></li>
+          <li><a href="#">GTA: V</a></li>
+          <li><a href="#">GTA Online</a></li>
+          <li><a href="#">GTA: VI</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#sites">Lugares icónicos</a>
+        <ul>
+          <li><a href="#">Ciudades</a></li>
+          <li><a href="#">Ubicaciones famosas</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+<div class="content">
+  <h2>GTA Online - El Mundo Multijugador Definitivo</h2>
+  <p>
+    <span class="highlight">Grand Theft Auto Online</span> es el componente multijugador masivo de GTA V que ha evolucionado hasta convertirse en un universo criminal completamente independiente. Ambientado en Los Santos y Blaine County, permite a los jugadores crear su propio personaje y construir un imperio criminal desde cero. Con actualizaciones constantes desde 2013, GTA Online ofrece golpes épicos, negocios lucrativos, carreras emocionantes y una experiencia multijugador sin precedentes donde hasta 30 jugadores pueden interactuar en un mismo mundo persistente.
+  </p>
+
+  <h2>GTA Online - Trailer Gameplay Oficial</h2>
+  <iframe src="https://www.youtube.com/embed/olEGtoYs_8A" title="GTA Online Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <h2>Mapa de GTA Online</h2>
+  <img src="https://preview.redd.it/hjsgyizri1f51.jpg?width=640&crop=smart&auto=webp&s=1b886f233ab49da07da363825b93ad7804c4d4be" alt="Mapa de GTA Online - Los Santos y Blaine County"/>
+
+  <h2>Actualizaciones Principales</h2>
+  <div class="update-section">
+    <div class="card">
+      <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/gta-onlinebusinesseschop-shop/d73c097d8bff1dc6e4e7ff0e5769bd59c66c859e.jpg" alt="The Chop Shop"/>
+      <p><strong>The Chop Shop (2023)</strong><br>La actualización más reciente que introduce el mundo del desguace de autos de lujo y nuevas misiones criminales.</p>
+    </div>
+    <div class="card">
+      <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/9/95/GTA_O_San_Andreas_Mercenaries_Banner.JPG?width=814" alt="San Andreas Mercenaries"/>
+      <p><strong>San Andreas Mercenaries (2023)</strong><br>Únete a los mercenarios más peligrosos en operaciones de alto riesgo por todo San Andreas.</p>
+    </div>
+    <div class="card">
+      <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/gta-onlinebusinessesdrug-wars/6b27608a07003327a524be2f0a1c252f2692cb0d.jpg"/>
+      <p><strong>Los Santos Drug Wars (2022)</strong><br>Sumérgete en el peligroso mundo del narcotráfico con nuevos laboratorios y operaciones.</p>
+    </div>
+  </div>
+
+  <h2>Personajes Icónicos</h2>
+  <div class="character-section">
+    <div class="card">
+      <img src="https://images.immediate.co.uk/production/volatile/sites/3/2024/01/radio-times-lester-stock-market-assassinations-44febdf.jpg?quality=90&webp=true&resize=1000,667" alt="Lester Crest"/>
+      <p><strong>Lester Crest</strong><br>El cerebro detrás de los golpes más elaborados, proporcionando inteligencia y coordinación para los atracos más complejos.</p>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.47PSCNgTba_uz28zNpP8lAAAAA?rs=1&pid=ImgDetMain"  alt="Agent 14"/>
+      <p><strong>Agent 14</strong><br>Agente gubernamental que contrata mercenarios para operaciones encubiertas y misiones de alta seguridad nacional.</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWwxdZLfzuKPBDpgt5GIgutyq9h07R2tghysrtZbUIEV7K9kE6UVumD12EeieM65oXcwg&usqp=CAU" alt="El Rubio"/>
+      <p><strong>El Rubio</strong><br>El narcotraficante más poderoso que controla la fortaleza de Cayo Perico, objetivo del golpe más ambicioso.</p>
+    </div>
+  </div>
+
+  <h2>Principales Antagonistas y Rivales</h2>
+  <div class="character-section">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrMdVeU5Opkf3A3MMTp-OZBEIgZTY8yutLxw&s" alt="Avery Duggan"/>
+      <p><strong>Avery Duggan</strong><br>Magnate inmobiliario corrupto que controla gran parte de Los Santos y compite por el dominio económico.</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVG_ooedmXCQSIopDJNDUE25A73CM-SQI8FQ&s" alt="Cliffford"/>
+      <p><strong>Cliffford</strong><br>Inteligencia artificial rogue que amenaza la seguridad mundial y debe ser detenida en el Golpe del Juicio Final.</p>
+    </div>
+    <ul>
+      <li><strong>Avery Duggan:</strong> Representa el poder corporativo corrupto que se opone a los jugadores en el mundo de los negocios legítimos.</li>
+      <li><strong>Cliffford:</strong> La amenaza tecnológica definitiva que pone en peligro la estabilidad global en una de las tramas más épicas.</li>
+      <li><strong>Organizaciones Rivales:</strong> Otros jugadores y sus organizaciones criminales que compiten por territorio y recursos.</li>
+    </ul>
+  </div>
+
+  <h2>Contactos y Aliados Clave</h2>
+  <div class="character-section">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.n4WoxkGyMoBGKz3tsDAQZAHaHa?w=147&h=180&c=7&r=0&o=5&pid=1.7" alt="Lamar Davis"/>
+      <p><strong>Lamar Davis</strong><br>Veterano de las calles que introduce a los nuevos jugadores al mundo criminal de Los Santos.</p>
+    </div>
+    <div class="card">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9ccc269e-273c-4dfb-97c4-667cfae749f0/dggm4ne-351b4e57-bb87-4177-9593-e42aba700f01.png/v1/fill/w_1192,h_670,q_70,strp/tony_prince__official_artwork____gta_tbogt__by_vicenzovegas21_dggm4ne-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvOWNjYzI2OWUtMjczYy00ZGZiLTk3YzQtNjY3Y2ZhZTc0OWYwXC9kZ2dtNG5lLTM1MWI0ZTU3LWJiODctNDE3Ny05NTkzLWU0MmFiYTcwMGYwMS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.vs726RcafiCt2uc-S-5K-mFw664HQ232serl_hQkpFs" alt="Tony Prince"/>
+      <p><strong>Tony Prince</strong><br>Dueño de discotecas que ayuda a los jugadores a establecer sus propios imperios de entretenimiento nocturno.</p>
+    </div>
+    <div class="card">
+      <img src="https://grandtheftfans.com/wp-content/uploads/2022/10/GTA-Online-Pavel.jpg" alt="Pavel"/>
+      <p><strong>Pavel</strong><br>Submarinista ruso y experto en infiltración que asiste en el Golpe de Cayo Perico.</p>
+    </div>
+  </div>
+
+  <h2>Secretos y Easter Eggs</h2>
+<table border="1">
+    <tr>
+        <th>Misterio</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><strong>El Misterio del Monte Chiliad</strong></td>
+        <td>Jeroglíficos y teorías conspirativas rodean esta montaña, con múltiples Easter eggs ocultos que los jugadores siguen descubriendo.</td>
+    </tr>
+    <tr>
+        <td><strong>OVNIs en Los Santos</strong></td>
+        <td>Apariciones de platillos voladores en diferentes ubicaciones durante condiciones climáticas específicas.</td>
+    </tr>
+    <tr>
+        <td><strong>Peyote Plants</strong></td>
+        <td>Plantas especiales que transforman temporalmente a los jugadores en diversos animales de Los Santos.</td>
+    </tr>
+    <tr>
+        <td><strong>Referencias al Universo GTA</strong></td>
+        <td>Conexiones ocultas con personajes y eventos de juegos anteriores de la saga.</td>
+    </tr>
+    <tr>
+        <td><strong>Epsilon Program</strong></td>
+        <td>Culto misterioso con misiones secretas y recompensas exclusivas para los más dedicados.</td>
+    </tr>
+    <tr>
+        <td><strong>Fantasma de Jolene Cranley-Evans</strong></td>
+        <td>Aparición espectral en el Monte Gordo que cuenta una historia trágica del pasado.</td>
+    </tr>
+</table>
+
+
+  <h2>Ubicaciones Icónicas</h2>
+  <div class="location-section">
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/0f/ef/92/0fef927b51b0c766c4378a4bd99f1ea3.jpg" alt="Diamond Casino"/>
+      <p><strong>Diamond Casino & Resort</strong><br>El complejo de entretenimiento más lujoso de Los Santos, centro de juegos de azar y misiones exclusivas.</p>
+    </div>
+    <div class="card">
+      <img src="https://sm.ign.com/t/ign_es/screenshot/default/gta-online-12-15-2020-taking-down-el-rubio-9-1608031959499_845p.1080.jpg" alt="Cayo Perico"/>
+      <p><strong>Cayo Perico</strong><br>Isla tropical privada del narcotraficante El Rubio, escenario del golpe más ambicioso de GTA Online.</p>
+    </div>
+    <div class="card">
+      <img src="https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1438093429.jpg" alt="Aeropuerto Internacional"/>
+      <p><strong>Aeropuerto Internacional de Los Santos</strong><br>Hub central para operaciones de contrabando y punto de llegada para muchas misiones importantes.</p>
+    </div>
+    <div class="card">
+      <img src="https://i.imgur.com/zjPnvsj.png" alt="Maze Bank Tower"/>
+      <p><strong>Maze Bank Tower</strong><br>El edificio más alto de Los Santos, símbolo del poder económico y hogar de oficinas ejecutivas.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.gta5-mods.com/q85-w800/images/del-perro-revived/5e4c81-Screenshot(83).png" alt="Del Perro Beach"/>
+      <p><strong>Del Perro Beach</strong><br>Zona costera vibrante perfecta para actividades recreativas y punto de encuentro social.</p>
+    </div>
+  </div>
+
+  <h2>Tipos de Actividades Principales</h2>
+  <div class="character-section">
+    <div class="card">
+      <img src="https://media.rockstargames.com/rockstargames/img/global/news/upload/actual_1425957536.png" alt="Heists"/>
+      <p><strong>Golpes y Atracos</strong><br>Operaciones multi-etapa que requieren coordinación de equipo y ofrecen las mayores recompensas del juego.</p>
+    </div>
+    <div class="card">
+      <img src="https://d.player.one/en/full/211241/show-how-good-you-are.webp?w=736&f=ba9b94ebcf13d8218aaa899de3fb3355" alt="Businesses"/>
+      <p><strong>Negocios Criminales</strong><br>Desde laboratorios de metanfetaminas hasta clubes nocturnos, genera ingresos pasivos mientras juegas.</p>
+    </div>
+    <div class="card">
+      <img src="https://assetsio.gnwcdn.com/the-effortless-loop-de-loop-surrealism-of-gta-5-onlines-racing-tracks-1617269479526.jpg?width=690&quality=70&format=jpg&auto=webp" alt="Racing"/>
+      <p><strong>Carreras y Competencias</strong><br>Desde carreras callejeras hasta competencias aéreas, pon a prueba tus habilidades de conducción.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+</div>
+</body>
+</html>
