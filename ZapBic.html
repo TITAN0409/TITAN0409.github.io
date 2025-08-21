@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Zapatería Bicentenario - Tradición y calidad en calzado desde hace generaciones" />
+        <meta name="author" content="Zapatería Bicentenario" />
+        <title>Zapatería Bicentenario - Tradición y Calidad</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            :root {
+                --primary-color: #1a1a2e;
+                --secondary-color: #16213e;
+                --accent-color: #c9a96e;
+                --accent-light: #d4af37;
+                --text-dark: #2c2c2c;
+                --text-light: #8e8e93;
+                --bg-elegant: #fafafa;
+            }
+            
+            body {
+                font-family: 'Lora', serif;
+                background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 50%, #eeeeee 100%);
+                color: var(--text-dark);
+                line-height: 1.7;
+            }
+            
+            .navbar {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                box-shadow: 0 4px 20px rgba(26, 26, 46, 0.15);
+                backdrop-filter: blur(10px);
+            }
+            
+            .site-heading {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                color: white;
+                padding: 3rem 0;
+                margin-bottom: 0;
+                box-shadow: 0 4px 20px rgba(26, 26, 46, 0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .site-heading::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 30%, rgba(201, 169, 110, 0.1) 50%, transparent 70%);
+                animation: shimmer 3s ease-in-out infinite;
+            }
+            
+            @keyframes shimmer {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+            
+            .site-heading-upper {
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.1rem;
+                font-weight: 200;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--accent-color);
+                margin-bottom: 0.5rem;
+                opacity: 0.95;
+            }
+            
+            .site-heading-lower {
+                font-family: 'Raleway', sans-serif;
+                font-size: 3.5rem;
+                font-weight: 100;
+                line-height: 0.9;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .text-primary {
+                color: var(--accent-color) !important;
+            }
+            
+            .bg-faded {
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+            
+            .intro {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                margin: 4rem 0;
+            }
+            
+            .intro-img {
+                flex: 1;
+                max-width: 500px;
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+                transition: all 0.3s ease;
+            }
+            
+            .intro-img:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            }
+            
+            .intro-text {
+                flex: 1;
+                padding: 4rem;
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .intro-text::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            }
+            
+            .section-heading-upper {
+                font-family: 'Raleway', sans-serif;
+                font-size: 0.9rem;
+                font-weight: 300;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--accent-color);
+                margin-bottom: 0.5rem;
+            }
+            
+            .section-heading-lower {
+                font-family: 'Raleway', sans-serif;
+                font-size: 2.8rem;
+                font-weight: 200;
+                color: var(--text-dark);
+                line-height: 1.1;
+                letter-spacing: 1px;
+            }
+            
+            .btn-primary {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                border: 2px solid transparent;
+                padding: 1.2rem 3rem;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                border-radius: 0;
+                transition: all 0.4s ease;
+                box-shadow: 0 8px 25px rgba(26, 26, 46, 0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .btn-primary::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                transition: left 0.5s;
+            }
+            
+            .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(26, 26, 46, 0.3);
+                background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+                border-color: var(--accent-color);
+            }
+            
+            .btn-primary:hover::before {
+                left: 100%;
+            }
+            
+            .page-section {
+                padding: 4rem 0;
+            }
+            
+            .cta {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                color: white;
+            }
+            
+            .cta-inner {
+                padding: 3rem;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            
+            .footer {
+                background: var(--text-dark);
+                color: var(--text-light);
+                padding: 2rem 0;
+            }
+            
+            .navbar-nav .nav-link {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+                color: rgba(255, 255, 255, 0.9) !important;
+                transition: all 0.3s ease;
+                position: relative;
+                text-transform: uppercase;
+            }
+            
+            .navbar-nav .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background: var(--accent-color);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+            
+            .navbar-nav .nav-link:hover {
+                color: var(--accent-color) !important;
+                transform: translateY(-1px);
+            }
+            
+            .navbar-nav .nav-link:hover::after {
+                width: 80%;
+            }
+            
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .feature-card {
+                background: rgba(255, 255, 255, 0.98);
+                padding: 3rem 2rem;
+                border-radius: 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                text-align: center;
+                transition: all 0.4s ease;
+                border: 1px solid rgba(201, 169, 110, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 100%);
+                transform: scaleX(0);
+                transition: transform 0.4s ease;
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+                border-color: var(--accent-color);
+            }
+            
+            .feature-card:hover::before {
+                transform: scaleX(1);
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--accent-color);
+                margin-bottom: 1.5rem;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+            
+            .feature-card:hover .feature-icon {
+                transform: scale(1.1);
+                color: var(--accent-light);
+            }
+            
+            @media (max-width: 768px) {
+                .intro {
+                    flex-direction: column;
+                }
+                
+                .site-heading-lower {
+                    font-size: 2rem;
+                }
+                
+                .intro-text {
+                    margin-top: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Tradición y Calidad desde Generaciones</span>
+                <span class="site-heading-lower">Zapatería Bicentenario</span>
+            </h1>
+        </header>
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">ZapBec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#inicio">Inicio</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#historia">Historia</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#catalogo">Catálogo</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="page-section clearfix" id="inicio">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid rounded" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zapatos de calidad artesanal" />
+                    <div class="intro-text bg-faded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Calzado Artesanal</span>
+                            <span class="section-heading-lower">Hecho a Medida</span>
+                        </h2>
+                        <p class="mb-3">Cada par de zapatos que creamos está hecho con materiales de la más alta calidad y técnicas tradicionales perfeccionadas a través de generaciones. En Zapatería Bicentenario, no solo fabricamos calzado, creamos piezas únicas que acompañarán cada paso de tu vida.</p>
+                        <div class="intro-button mx-auto">
+                            <a class="btn btn-primary btn-xl" href="#catalogo">Explora Nuestro Catálogo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="page-section" id="caracteristicas">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-heading">
+                        <span class="section-heading-upper">Lo Que Nos Distingue</span>
+                        <span class="section-heading-lower">Nuestra Experiencia</span>
+                    </h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👞</div>
+                        <h4>Tradición Familiar</h4>
+                        <p>Más de tres generaciones perfeccionando el arte de la zapatería con técnicas tradicionales transmitidas de padres a hijos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚒️</div>
+                        <h4>Artesanía Premium</h4>
+                        <p>Cada zapato es cuidadosamente elaborado a mano usando solo los mejores materiales: cuero genuino, suelas de alta calidad y herrajes duraderos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📏</div>
+                        <h4>Medida Perfecta</h4>
+                        <p>Ofrecemos servicio personalizado con toma de medidas profesional para garantizar el ajuste perfecto y máximo confort.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="page-section cta" id="promesa">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Nuestro Compromiso</span>
+                                <span class="section-heading-lower">Contigo</span>
+                            </h2>
+                            <p class="mb-4">En Zapatería Bicentenario, nos dedicamos a brindar no solo calzado de excepcional calidad, sino también un servicio personalizado que supere tus expectativas. Cada zapato que sale de nuestro taller lleva consigo la pasión y el conocimiento acumulado durante generaciones.</p>
+                            <p class="mb-0">Si no estás completamente satisfecho con tu compra, háznos saber y trabajaremos juntos para encontrar la solución perfecta. Tu comodidad y satisfacción son nuestra prioridad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="page-section" id="historia">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Nuestra Historia</span>
+                                <span class="section-heading-lower">Tres Generaciones</span>
+                            </h2>
+                            <p class="mb-3">Fundada en el año del Bicentenario, nuestra zapatería ha sido un pilar en la comunidad, combinando métodos tradicionales con innovación constante. Lo que comenzó como un pequeño taller familiar ha crecido hasta convertirse en una referencia de calidad y artesanía.</p>
+                            <p class="mb-3">Nuestros maestros zapateros han perfeccionado técnicas centenarias, adaptándolas a las necesidades modernas sin perder la esencia artesanal que nos caracteriza.</p>
+                            <p class="mb-0">Hoy, continuamos honrando esa tradición, creando calzado que no solo viste tus pies, sino que cuenta una historia de dedicación y excelencia.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid rounded shadow" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Taller de zapatería tradicional" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="page-section bg-faded" id="contacto">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">¿Listo Para El Calzado Perfecto?</span>
+                        <span class="section-heading-lower">Visítanos Hoy</span>
+                    </h2>
+                    <p class="lead mb-4">Te invitamos a conocer nuestro taller y experimentar de primera mano la diferencia que hace la verdadera artesanía. Nuestros expertos estarán encantados de ayudarte a encontrar o crear el par perfecto para ti.</p>
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="feature-card">
+                                <div class="feature-icon">📍</div>
+                                <h5>Ubicación</h5>
+                                <p class="mb-0">Centro Histórico<br>San Luis Potosí, SLP</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="feature-card">
+                                <div class="feature-icon">🕒</div>
+                                <h5>Horarios</h5>
+                                <p class="mb-0">Lun-Vie: 9:00-19:00<br>Sáb: 9:00-15:00</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="feature-card">
+                                <div class="feature-icon">📞</div>
+                                <h5>Contacto</h5>
+                                <p class="mb-0">Tel: (444) XXX-XXXX<br>zapbec@ejemplo.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer text-center py-5">
+            <div class="container">
+                <p class="m-0 small">Copyright &copy; Zapatería Bicentenario 2025 - Tradición y Calidad</p>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add scroll effect to navbar
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('mainNav');
+                if (window.scrollY > 100) {
+                    navbar.style.backgroundColor = 'rgba(139, 69, 19, 0.95)';
+                } else {
+                    navbar.style.backgroundColor = '';
+                }
+            });
+        </script>
+    </body>
+</html>
