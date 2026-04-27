@@ -1,0 +1,328 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.pg{background:#1535a0;font-family:Georgia,'Times New Roman',serif;padding:0;position:relative;overflow:hidden}
+.pg::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:50px solid rgba(255,255,255,0.03);pointer-events:none}
+.pg::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;border:35px solid rgba(255,255,255,0.03);pointer-events:none}
+.pg .c2{position:absolute;top:40%;left:-60px;width:200px;height:200px;border-radius:50%;border:2px solid rgba(255,255,255,0.04);pointer-events:none}
+.pg .c3{position:absolute;top:65%;right:-70px;width:260px;height:260px;border-radius:50%;border:2px solid rgba(255,255,255,0.04);pointer-events:none}
+
+/* HEADER */
+.hdr{background:#0a2070;margin:24px 20px 0;border-radius:20px;padding:28px 24px 22px;text-align:center;position:relative;z-index:2;border:1px solid rgba(255,255,255,0.1)}
+.hdr-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:11px;font-style:normal;font-family:sans-serif;padding:4px 16px;border-radius:20px;margin-bottom:12px;letter-spacing:0.8px}
+.hdr h1{font-size:30px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px}
+.hdr p{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.65;max-width:480px;margin:0 auto}
+.author{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:12px;padding:5px 20px;border-radius:20px;margin-top:14px;font-family:sans-serif}
+
+/* SECCIÓN */
+.sec{margin:16px 20px;position:relative;z-index:2}
+.card{background:#0a2070;border-radius:16px;padding:20px 22px;border:1px solid rgba(255,255,255,0.08)}
+.card.alt{background:#0d2880}
+.sec-title{font-family:sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-title .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.body{font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75}
+.body strong{color:#fff}
+.body em{color:rgba(255,255,255,0.55);font-style:normal;font-size:11px}
+
+/* GRID 2 col */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+/* BLOQUE DEFINICION */
+.def-row{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start}
+.def-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.def-text h3{font-size:12.5px;font-weight:700;color:#fff;font-family:sans-serif;margin-bottom:2px}
+.def-text p{font-size:11.5px;color:rgba(255,255,255,0.75);line-height:1.6}
+
+/* LIFECYCLE */
+.lc-wrap{display:flex;align-items:stretch;gap:0;margin:10px 0}
+.lc{flex:1;text-align:center;padding:9px 4px 7px;font-family:sans-serif;font-size:10px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08)}
+.lc:first-child{border-radius:8px 0 0 8px}
+.lc:last-child{border-radius:0 8px 8px 0}
+.lc span{display:block;font-size:9px;font-weight:400;opacity:0.6;margin-top:2px}
+.lc.hi{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.4)}
+.lc-arr{color:rgba(255,255,255,0.35);font-size:12px;display:flex;align-items:center;padding:0 1px;flex-shrink:0}
+
+/* VENTAJAS / DESAFIOS */
+.vd-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.vd-col{padding:14px 16px}
+.vd-col h3{font-family:sans-serif;font-size:12px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.vd-col.v h3{color:#86efac}
+.vd-col.d h3{color:#fca5a5}
+.vd-item{display:flex;gap:8px;margin-bottom:9px;align-items:flex-start}
+.vd-dot{width:6px;height:6px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.vd-dot.v{background:#86efac}
+.vd-dot.d{background:#fca5a5}
+.vd-item p{font-size:11px;color:rgba(255,255,255,0.8);line-height:1.55}
+.vd-item strong{color:#fff;font-size:11px}
+.vd-divider{width:1px;background:rgba(255,255,255,0.1)}
+
+/* SINCRONIZACION */
+.sync-item{background:rgba(255,255,255,0.07);border-radius:10px;padding:12px 13px;border-left:3px solid rgba(255,255,255,0.3)}
+.sync-item h3{font-family:sans-serif;font-size:12px;font-weight:700;color:#fff;margin-bottom:4px}
+.sync-item p{font-size:11px;color:rgba(255,255,255,0.75);line-height:1.55}
+.sync-item .badge{display:inline-block;font-size:9.5px;font-family:sans-serif;padding:2px 8px;border-radius:10px;margin-bottom:5px;font-weight:600}
+.badge-b{background:rgba(134,239,172,0.15);color:#86efac;border:1px solid rgba(134,239,172,0.3)}
+.badge-w{background:rgba(252,165,165,0.15);color:#fca5a5;border:1px solid rgba(252,165,165,0.3)}
+
+/* BROWSER REAL WORLD */
+.browser{background:rgba(255,255,255,0.07);border-radius:12px;padding:14px;margin-top:10px}
+.browser-bar{background:rgba(255,255,255,0.1);border-radius:6px;padding:5px 10px;display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.dot{width:7px;height:7px;border-radius:50%}
+.thread-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.thread-row:last-child{margin-bottom:0}
+.t-label{font-family:sans-serif;font-size:10px;font-weight:700;color:#fff;min-width:54px;background:rgba(255,255,255,0.12);padding:3px 7px;border-radius:5px;text-align:center}
+.t-bar{height:14px;border-radius:4px;display:flex;align-items:center;padding:0 7px;font-size:9.5px;font-family:sans-serif;font-weight:600;color:#fff}
+
+/* CONTEXT SWITCH */
+.cs-row{margin-bottom:6px}
+.cs-label{font-family:sans-serif;font-size:10px;color:rgba(255,255,255,0.55);margin-bottom:3px}
+.cs-bar{display:flex;gap:2px}
+.cs-seg{height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:9px;font-weight:700;color:#fff}
+
+/* CÓDIGO */
+.code{background:#060f2e;border-radius:10px;padding:13px 15px;font-family:monospace;font-size:11px;line-height:1.9;color:#c9d1d9}
+.kw{color:#ff7b72}.fn{color:#d2a8ff}.st{color:#a5d6ff}.cm{color:#4b6ea8}.cl{color:#ffa657}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px 0 28px;color:rgba(255,255,255,0.22);font-family:sans-serif;font-size:10.5px;letter-spacing:0.5px;position:relative;z-index:2}
+
+/* DIVIDER */
+.hdiv{height:1px;background:rgba(255,255,255,0.07);margin:0 20px}
+
+/* NUMBERED STEPS */
+.step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.step-num{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px}
+.step p{font-size:12px;color:rgba(255,255,255,0.82);line-height:1.6}
+.step p strong{color:#fff}
+</style>
+
+<div class="pg">
+  <div class="c2"></div><div class="c3"></div>
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <span class="hdr-badge">COMPUTER SCIENCE</span>
+    <h1>Programación Concurrente:<br>El Arte de la Multitarea</h1>
+    <p>La capacidad de un programa para gestionar múltiples tareas de forma intercalada. No es necesariamente que ocurran al mismo instante exacto — eso es <strong style="color:#fff">paralelismo</strong> — sino que el sistema progresa en varias tareas simultáneamente.</p>
+    <div class="author">Programación Concurrente — Guía Completa</div>
+  </div>
+
+  <!-- QUÉ ES UN HILO -->
+  <div class="sec">
+    <div class="card">
+      <div class="sec-title"><div class="ic">🧵</div> ¿Qué es un Hilo (Thread)?</div>
+      <div class="body" style="margin-bottom:12px">Un <strong>hilo</strong> es la unidad más pequeña de ejecución que un sistema operativo puede gestionar de forma independiente.</div>
+      <div class="def-row">
+        <div class="def-icon">🏢</div>
+        <div class="def-text"><h3>El Proceso</h3><p>Es el "contenedor" — como una <strong>oficina entera</strong> con todos sus recursos: memoria, archivos abiertos y conexiones de red.</p></div>
+      </div>
+      <div class="def-row">
+        <div class="def-icon">👷</div>
+        <div class="def-text"><h3>El Hilo</h3><p>Es el "trabajador" dentro de esa oficina. Un proceso puede tener <strong>múltiples hilos</strong> ejecutando tareas diferentes al mismo tiempo.</p></div>
+      </div>
+      <div class="def-row" style="margin-bottom:0">
+        <div class="def-icon">🔗</div>
+        <div class="def-text"><h3>Memoria compartida</h3><p>Todos los hilos de un mismo proceso comparten la misma memoria — permite <strong>comunicación rápida</strong> pero requiere sincronización cuidadosa.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CICLO DE VIDA -->
+  <div class="sec">
+    <div class="card alt">
+      <div class="sec-title"><div class="ic">🔄</div> Ciclo de vida de un hilo</div>
+      <div class="lc-wrap">
+        <div class="lc">Nuevo<span>new Thread()</span></div>
+        <div class="lc-arr">›</div>
+        <div class="lc hi">Listo<span>start()</span></div>
+        <div class="lc-arr">›</div>
+        <div class="lc hi">Ejecutando<span>CPU asignada</span></div>
+        <div class="lc-arr">›</div>
+        <div class="lc">Bloqueado<span>wait/sleep</span></div>
+        <div class="lc-arr">›</div>
+        <div class="lc">Terminado<span>run() finaliza</span></div>
+      </div>
+      <div class="body" style="font-size:11px;margin-top:4px;color:rgba(255,255,255,0.5)">Un hilo bloqueado regresa a Listo al recibir notify() o cuando expira su tiempo de espera.</div>
+    </div>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="sec">
+    <div class="card">
+      <div class="sec-title"><div class="ic">⚙️</div> ¿Cómo funciona?</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <p><strong>Context Switching:</strong> El procesador cambia tan rápido entre hilos que parece que todo sucede a la vez. Cada cambio guarda el estado del hilo actual y restaura el del siguiente.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p><strong>Eficiencia de I/O:</strong> Mientras un hilo espera una respuesta de internet o disco, otro hilo sigue haciendo cálculos — el CPU nunca queda inactivo.</p>
+      </div>
+      <div class="step" style="margin-bottom:0">
+        <div class="step-num">3</div>
+        <p><strong>Scheduler del SO:</strong> El sistema operativo decide qué hilo corre en cada instante usando algoritmos de planificación como Round Robin o prioridades.</p>
+      </div>
+      <!-- Visualización context switch -->
+      <div style="margin-top:14px">
+        <div class="cs-label">Visualización — 1 CPU, context switching entre 3 hilos</div>
+        <div class="cs-row">
+          <div class="cs-bar">
+            <div class="cs-seg" style="flex:2;background:#534ab7">H1</div>
+            <div class="cs-seg" style="flex:1.5;background:#0f6e56">H2</div>
+            <div class="cs-seg" style="flex:1;background:#993c1d">H3</div>
+            <div class="cs-seg" style="flex:2.5;background:#534ab7">H1</div>
+            <div class="cs-seg" style="flex:1.5;background:#0f6e56">H2</div>
+            <div class="cs-seg" style="flex:1;background:#993c1d">H3</div>
+            <div class="cs-seg" style="flex:2;background:#534ab7">H1</div>
+          </div>
+        </div>
+        <div class="cs-label" style="margin-top:5px">Ejecución paralela real — múltiples CPUs</div>
+        <div class="cs-row">
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;color:rgba(255,255,255,0.4);min-width:42px;font-family:sans-serif">CPU 1</span><div class="cs-seg" style="flex:1;background:#534ab7;height:14px;border-radius:3px;width:100%;font-size:9px">Hilo 1 — ejecución continua</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;color:rgba(255,255,255,0.4);min-width:42px;font-family:sans-serif">CPU 2</span><div class="cs-seg" style="flex:1;background:#0f6e56;height:14px;border-radius:3px;width:100%;font-size:9px">Hilo 2 — ejecución continua</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VENTAJAS VS DESAFIOS -->
+  <div class="sec">
+    <div class="card alt" style="padding:0;overflow:hidden">
+      <div style="padding:16px 22px 10px">
+        <div class="sec-title"><div class="ic">⚖️</div> Ventajas vs Desafíos</div>
+      </div>
+      <div class="vd-grid">
+        <div class="vd-col v">
+          <h3>✓ Ventajas</h3>
+          <div class="vd-item"><div class="vd-dot v"></div><p><strong>Mayor responsividad:</strong> La interfaz no se congela mientras se procesan datos en segundo plano.</p></div>
+          <div class="vd-item"><div class="vd-dot v"></div><p><strong>Aprovechamiento de CPU:</strong> Uso óptimo de procesadores multinúcleo modernos.</p></div>
+          <div class="vd-item"><div class="vd-dot v"></div><p><strong>División de tareas:</strong> Estructura de código más lógica para tareas independientes.</p></div>
+          <div class="vd-item"><div class="vd-dot v"></div><p><strong>Menor costo:</strong> Crear hilos es más barato que crear procesos nuevos.</p></div>
+        </div>
+        <div class="vd-divider"></div>
+        <div class="vd-col d">
+          <h3>✗ Desafíos</h3>
+          <div class="vd-item"><div class="vd-dot d"></div><p><strong>Race Conditions:</strong> Dos hilos modifican el mismo dato al mismo tiempo con resultados impredecibles.</p></div>
+          <div class="vd-item"><div class="vd-dot d"></div><p><strong>Deadlocks:</strong> Hilos que se esperan mutuamente y quedan bloqueados para siempre.</p></div>
+          <div class="vd-item"><div class="vd-dot d"></div><p><strong>Depuración difícil:</strong> Los errores son no determinísticos y difíciles de reproducir.</p></div>
+          <div class="vd-item"><div class="vd-dot d"></div><p><strong>Starvation:</strong> Un hilo con baja prioridad nunca llega a ejecutarse.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SINCRONIZACIÓN -->
+  <div class="sec">
+    <div class="card">
+      <div class="sec-title"><div class="ic">🛡️</div> Herramientas de sincronización</div>
+      <div class="body" style="margin-bottom:12px">Para evitar el caos, los programadores usamos mecanismos de control que regulan el acceso a recursos compartidos:</div>
+      <div class="g2" style="gap:8px">
+        <div class="sync-item">
+          <span class="badge badge-b">SOLUCIÓN</span>
+          <h3>Mutex (Exclusión Mutua)</h3>
+          <p>Un "candado" que solo permite que <strong>un hilo</strong> acceda a un recurso a la vez. El resto espera en cola.</p>
+        </div>
+        <div class="sync-item">
+          <span class="badge badge-b">SOLUCIÓN</span>
+          <h3>Semáforos</h3>
+          <p>Controlan el acceso basado en un <strong>contador de permisos</strong>. Permiten N hilos simultáneos, no solo 1.</p>
+        </div>
+        <div class="sync-item">
+          <span class="badge badge-b">SOLUCIÓN</span>
+          <h3>Monitores</h3>
+          <p>Estructuras de alto nivel que <strong>encapsulan variables</strong> y métodos permitiendo acceso seguro automático.</p>
+        </div>
+        <div class="sync-item">
+          <span class="badge badge-w">PROBLEMA</span>
+          <h3>Deadlock — Cómo evitarlo</h3>
+          <p>Definir un <strong>orden fijo</strong> para adquirir locks, usar timeouts, y nunca mantener un lock al pedir otro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJEMPLO REAL: NAVEGADOR -->
+  <div class="sec">
+    <div class="card alt">
+      <div class="sec-title"><div class="ic">🚀</div> Ejemplo real — Navegador web</div>
+      <div class="body" style="margin-bottom:10px">Un navegador moderno usa <strong>múltiples hilos</strong> en paralelo para que todo funcione sin bloquearse:</div>
+      <div class="browser">
+        <div class="browser-bar">
+          <div class="dot" style="background:#ff5f57"></div>
+          <div class="dot" style="background:#febc2e"></div>
+          <div class="dot" style="background:#28c840"></div>
+          <span style="font-size:10px;color:rgba(255,255,255,0.4);font-family:sans-serif;margin-left:6px">https://ejemplo.com — cargando...</span>
+        </div>
+        <div class="thread-row">
+          <div class="t-label">Hilo 1</div>
+          <div class="t-bar" style="flex:1;background:#534ab7">Renderiza el texto y el DOM de la página</div>
+        </div>
+        <div class="thread-row">
+          <div class="t-label">Hilo 2</div>
+          <div class="t-bar" style="flex:1;background:#0f6e56">Descarga imágenes y recursos en segundo plano</div>
+        </div>
+        <div class="thread-row">
+          <div class="t-label">Hilo 3</div>
+          <div class="t-bar" style="flex:1;background:#993c1d">Escucha eventos del usuario (clics, teclado)</div>
+        </div>
+        <div class="thread-row">
+          <div class="t-label">Hilo 4</div>
+          <div class="t-bar" style="flex:1;background:#854f0b">Ejecuta animaciones CSS y JavaScript</div>
+        </div>
+        <div class="thread-row">
+          <div class="t-label">Hilo 5</div>
+          <div class="t-bar" style="flex:1;background:#4b6ea8">Gestiona caché y almacenamiento local</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTROS EJEMPLOS REALES -->
+  <div class="sec">
+    <div class="card">
+      <div class="sec-title"><div class="ic">🌍</div> Otros usos en el mundo real</div>
+      <div class="g3">
+        <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:11px 12px">
+          <div style="font-family:sans-serif;font-size:11px;font-weight:700;color:#fff;margin-bottom:5px">Videojuegos</div>
+          <p style="font-size:11px;color:rgba(255,255,255,0.75);line-height:1.55">Hilo de física, hilo de audio, hilo de render y hilo de red corriendo simultáneamente.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:11px 12px">
+          <div style="font-family:sans-serif;font-size:11px;font-weight:700;color:#fff;margin-bottom:5px">Servidores web</div>
+          <p style="font-size:11px;color:rgba(255,255,255,0.75);line-height:1.55">Cada solicitud HTTP recibe un hilo propio para responder a miles de usuarios a la vez.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:11px 12px">
+          <div style="font-family:sans-serif;font-size:11px;font-weight:700;color:#fff;margin-bottom:5px">Apps móviles</div>
+          <p style="font-size:11px;color:rgba(255,255,255,0.75);line-height:1.55">El hilo principal gestiona la UI; hilos de fondo descargan datos sin congelar la pantalla.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÓDIGO -->
+  <div class="sec">
+    <div class="card alt">
+      <div class="sec-title"><div class="ic">💻</div> Ejemplo en código — Python</div>
+      <div class="code">
+<span class="kw">import</span> <span class="st">threading</span><br>
+<span class="kw">import</span> <span class="st">time</span><br>
+<br>
+<span class="kw">def</span> <span class="fn">descargar_imagen</span>(nombre):<br>
+&nbsp;&nbsp;<span class="fn">print</span>(<span class="st">f"Descargando </span>{nombre}<span class="st">..."</span>)<br>
+&nbsp;&nbsp;<span class="fn">time.sleep</span>(<span class="cl">2</span>) <span class="cm"># simula descarga</span><br>
+&nbsp;&nbsp;<span class="fn">print</span>(<span class="st">f"</span>{nombre}<span class="st"> lista"</span>)<br>
+<br>
+<span class="cm"># Crear 3 hilos que corren en paralelo</span><br>
+<span class="kw">for</span> img <span class="kw">in</span> [<span class="st">"foto1"</span>, <span class="st">"foto2"</span>, <span class="st">"foto3"</span>]:<br>
+&nbsp;&nbsp;t = <span class="st">threading</span>.<span class="fn">Thread</span>(target=<span class="fn">descargar_imagen</span>, args=(img,))<br>
+&nbsp;&nbsp;t.<span class="fn">start</span>() <span class="cm"># lanzar hilo</span><br>
+<br>
+<span class="cm"># Con hilos: ~2s. Sin hilos: ~6s.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Programación Concurrente e Hilos (Threads) — Guía Visual Completa</div>
+</div>
